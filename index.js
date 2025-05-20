@@ -23,10 +23,9 @@ function fetchData() {
 
     // Update Time
     const localTime = data.location.localtime.split(" ")[1];
+    console.log(localTime);
 
-    document.querySelector(".time h4 span").textContent = `${localTime} :${
-      localTime <= 12 ? "AM" : "PM"
-    }  `;
+    document.querySelector(".time h4 ").textContent = localTime;
 
     // Update UV Index
     document.querySelector(".uv h4").textContent = data.current.uv;
@@ -66,7 +65,6 @@ function dark() {
       rootElement.style.setProperty("--primary-color", "#505050");
       rootElement.style.setProperty("--background-2-color", "#f0f0f0e7");
       rootElement.style.setProperty("--text-color", "#02060c");
-
       flag = 0;
     }
   });
