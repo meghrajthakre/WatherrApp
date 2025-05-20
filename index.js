@@ -15,7 +15,6 @@ function fetchData() {
       `https://api.weatherapi.com/v1/forecast.json?key=7cbaaeb6b69f4cb0bfc73034251905&q=${name}&days=1&aqi=no&alerts=no`
     );
     let data = await response.json();
-    console.log(data);
 
     // Update City Name
     document.querySelector(".city-name").textContent = data.location.name;
@@ -23,7 +22,6 @@ function fetchData() {
 
     // Update Time
     const localTime = data.location.localtime.split(" ")[1];
-    console.log(localTime);
 
     document.querySelector(".time h4 ").textContent = localTime;
 
